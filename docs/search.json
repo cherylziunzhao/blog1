@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nPredicting Heart Disease with Machine Learning\n\n\n\n\n\n\nMachine Learning\n\n\nHealthcare\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\nZiyuan Zhao\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Predicting Heart Disease with Machine Learning",
+    "section": "",
+    "text": "Heart disease is the leading cause of death worldwide, accounting for nearly 18 million deaths annually. Early diagnosis is critical to improving outcomes, but traditional diagnostic methods are often time-consuming and require significant expertise.\nCould machine learning offer a faster and more scalable solution? In this blog, I’ll take you through how we used the Cleveland Heart Disease dataset to predict heart disease using machine learning. You’ll learn how to preprocess data, select models, and evaluate performance, with practical insights along the way."
+  },
+  {
+    "objectID": "posts/welcome/index.html#introduction",
+    "href": "posts/welcome/index.html#introduction",
+    "title": "Predicting Heart Disease with Machine Learning",
+    "section": "",
+    "text": "Heart disease is the leading cause of death worldwide, accounting for nearly 18 million deaths annually. Early diagnosis is critical to improving outcomes, but traditional diagnostic methods are often time-consuming and require significant expertise.\nCould machine learning offer a faster and more scalable solution? In this blog, I’ll take you through how we used the Cleveland Heart Disease dataset to predict heart disease using machine learning. You’ll learn how to preprocess data, select models, and evaluate performance, with practical insights along the way."
+  },
+  {
+    "objectID": "posts/welcome/index.html#dataset-overview",
+    "href": "posts/welcome/index.html#dataset-overview",
+    "title": "Predicting Heart Disease with Machine Learning",
+    "section": "Dataset Overview",
+    "text": "Dataset Overview\nThe Cleveland Heart Disease dataset is a well-known dataset for predicting the presence of heart disease. It contains 303 observations, with each representing a patient. The dataset includes 13 features, such as age, cholesterol levels, and exercise-induced angina, along with a target variable (num) indicating the presence (1) or absence (0) of heart disease.\n\nFeature Breakdown\n\nCategorical features: Sex, chest pain type (cp), fasting blood sugar (fbs), and rest electrocardiographic results (restecg).\nNumerical features: Age, resting blood pressure (trestbps), serum cholesterol (chol), and maximum heart rate achieved (thalach).\n\nBelow is a figure of the categorical feature distributions, which helps highlight trends among patient groups:\n\n\n\nCategorical Feature Distributions\n\n\nThe target variable distribution also shows an imbalance, with more cases of no heart disease (0) than cases with heart disease (1):\n\n\n\nTarget Distribution\n\n\nThese features capture a mix of physiological and clinical data, making them ideal for predicting heart disease."
+  },
+  {
+    "objectID": "posts/welcome/index.html#data-preprocessing",
+    "href": "posts/welcome/index.html#data-preprocessing",
+    "title": "Predicting Heart Disease with Machine Learning",
+    "section": "Data Preprocessing",
+    "text": "Data Preprocessing\nData preprocessing is a crucial step before building any machine learning model. For this dataset, we took the following steps:\n\nHandling Missing Values:\nThe dataset used a placeholder (?) for missing values. These were replaced with NaN, and rows with too many missing values were dropped.\nEncoding Categorical Features:\nFeatures like cp and sex were encoded using one-hot encoding to make them suitable for machine learning models.\nSplitting the Data:\nThe dataset was split into training (70%) and test (30%) subsets using stratified sampling to maintain the target variable’s distribution.\nStandardization:\nNumerical features were standardized to ensure they were on a similar scale, which is critical for models like logistic regression and SVC.\n\nWe can see from the boxplots below that there are variability and potential outliers:\n\n\n\nNumerical Feature Boxplots"
+  },
+  {
+    "objectID": "posts/welcome/index.html#model-selection",
+    "href": "posts/welcome/index.html#model-selection",
+    "title": "Predicting Heart Disease with Machine Learning",
+    "section": "Model Selection",
+    "text": "Model Selection\nWe evaluated four models to predict heart disease:\n\nLogistic Regression:\nChosen for its simplicity and interpretability.\nSupport Vector Classifier (SVC):\nEffective for classification tasks but sensitive to hyperparameters.\nDecision Tree:\nProvides easy-to-interpret results but tends to overfit.\nDummy Classifier:\nUsed as a baseline for comparison.\n\nWe used 5-fold cross-validation to tune hyperparameters and evaluated models based on accuracy."
+  },
+  {
+    "objectID": "posts/welcome/index.html#results-and-visualizations",
+    "href": "posts/welcome/index.html#results-and-visualizations",
+    "title": "Predicting Heart Disease with Machine Learning",
+    "section": "Results and Visualizations",
+    "text": "Results and Visualizations\nThe Logistic Regression model achieved the highest accuracy of 84%, outperforming the other models. Here’s a summary of the results:\n\n\n\nModel\nAccuracy\n\n\n\n\nLogistic Regression\n0.84\n\n\nSupport Vector Classifier\n0.82\n\n\nDecision Tree\n0.78\n\n\nDummy Classifier\n0.54\n\n\n\n\nKey Visualizations\n\nConfusion Matrix for Logistic Regression:\nThis plot shows the model’s performance in predicting true positives and negatives.\n\n\n\n\nConfusion Matrix\n\n\n\nLogistic Regression Coefficients:\nBelow is a chart showing the feature coefficients from the Logistic Regression model. Features like chest pain type (cp) and ST depression (oldpeak) significantly impact heart disease prediction.\n\n\n\n\nFeature Coefficients"
+  },
+  {
+    "objectID": "posts/welcome/index.html#challenges-and-insights",
+    "href": "posts/welcome/index.html#challenges-and-insights",
+    "title": "Predicting Heart Disease with Machine Learning",
+    "section": "Challenges and Insights",
+    "text": "Challenges and Insights\n\nImbalanced Data:\nThe dataset had more samples without heart disease, making it challenging for the model to generalize. Stratified sampling helped mitigate this issue.\nInterpreting Encoded Features:\nOne-hot encoding expanded categorical features into multiple columns, which made interpreting coefficients less straightforward.\nFeature Importance:\nLogistic Regression provided insights into which features were most important, such as cp and thal."
+  },
+  {
+    "objectID": "posts/welcome/index.html#conclusion",
+    "href": "posts/welcome/index.html#conclusion",
+    "title": "Predicting Heart Disease with Machine Learning",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis project demonstrates that machine learning models, especially Logistic Regression, can effectively predict heart disease when the data is preprocessed and models are evaluated thoughtfully. By focusing on explainability and careful preprocessing, these methods can pave the way for faster, more accurate healthcare diagnostics.\nIf you’re curious about applying machine learning to other healthcare problems, try experimenting with similar datasets. The possibilities are endless!"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  }
+]

@@ -1,0 +1,17 @@
+/* Increase the font size for the main text */
+body {
+    font-size: 24px; /* Adjust as needed, default is typically 16px */
+    line-height: 1.6; /* Ensure good readability */
+  }
+  
+  /* Increase the font size for headings */
+  h1 {
+    font-size: 2.5em; /* Adjust for a larger main heading */
+  }
+  h2 {
+    font-size: 2em;   /* Adjust for section headings */
+  }
+  h3 {
+    font-size: 1.75em;
+  }
+  
